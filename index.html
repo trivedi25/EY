@@ -33,10 +33,6 @@
             });
         }
 
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('popup-overlay').style.display = 'none';
-        }
     </script>
 </head>
 <body>
@@ -106,7 +102,7 @@
         <br> 
         <div class="container">
             <div class="row">
-                <div class="col-md-4 offset-md-4 text-center" > <button type="submit" class="btn btn-primary btn-sm" >Generate</button>
+                <div class="col-md-4 offset-md-4 text-center" > <button type="submit" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Generate</button>
                 </div>
                 
             </div>
@@ -114,14 +110,27 @@
         
     </form>
 
-    <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
 
     <!-- Popup window -->
-    <div id="popup" class="popup">
-        <pre id="popup-content"></pre>
-        <button onclick="closePopup()">Close</button>
-    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="popup" class="popup">
+                    <pre id="popup-content"></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 </body>
-
-
 </html>
